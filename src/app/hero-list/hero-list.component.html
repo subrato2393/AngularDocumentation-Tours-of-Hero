@@ -1,0 +1,7 @@
+<li *ngFor="let hero of heroList">
+    <button type="button" (click)="onButtonClick(hero)">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+    </button>
+ </li>
+ <app-hero-detail [hero]="selectedHero"></app-hero-detail>

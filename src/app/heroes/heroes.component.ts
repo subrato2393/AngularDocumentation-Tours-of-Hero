@@ -21,10 +21,4 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onButtonClick(hero:Hero){
-    this.isShow=true;
-    this.selectedHero=hero;
-    console.log(this.selectedHero);
-  }
 }

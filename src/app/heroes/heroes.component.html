@@ -6,15 +6,10 @@
 
 <ul class="heroes">
  <h1>Heroes List</h1>
- <li *ngFor="let hero of heroes">
-    <button type="button" (click)="onButtonClick(hero)">
-        <span class="badge">{{hero.id}}</span>
-        <span class="name">{{hero.name}}</span>
-    </button>
- </li>
+ <app-hero-list [heroList]="heroes"></app-hero-list>
 </ul>
 
-<div *ngIf="isShow">
+<!-- <div *ngIf="isShow">
     <div *ngIf="selectedHero">
         <h3>{{selectedHero.name}} : Details</h3>
         <h3>{{selectedHero.id}}</h3>
@@ -24,5 +19,5 @@
             <input type="text" [(ngModel)]="selectedHero.name">
         </div>
     </div>
-</div>
+</div> -->
 
