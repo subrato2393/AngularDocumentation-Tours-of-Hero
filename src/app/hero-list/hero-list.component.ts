@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HEROES } from '../mock-heroes';
 import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-hero-list',
@@ -10,7 +12,7 @@ import { Hero } from '../hero';
 export class HeroListComponent implements OnInit {
 
   selectedHero?:Hero;
-  constructor() { }
+  constructor(private messageService:MessageService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +20,7 @@ export class HeroListComponent implements OnInit {
 onButtonClick(hero:Hero){
   //this.isShow=true;
   this.selectedHero=hero;
+  this.messageService.add(`HeroeListComponent: Selected hero id=${hero.id}`);
   console.log(this.selectedHero);
 }
 
